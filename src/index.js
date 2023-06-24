@@ -14,7 +14,7 @@ require('./config/passport');//(*)    requerimos todo eso que hemos hecho en pas
 
 
 //settings (configuacion)
-app.set('port', process.env.PORT || 3000); //creo una configuraci'on de puerto para la nube o el local 3000
+const PORT = app.set('port', process.env.PORT || 3000); //creo una configuraci'on de puerto para la nube o el local 3000
 app.set('views', path.join(__dirname, "views")); //metodo path permite unir directorio, dirname me devuelve la ruta hasta mi carpeta global(src) as'i que la concateno con otra que tiene dentro, en este caso "views", basicamente esta l'inea sirve para decirl al servidor que la carpeta "views" est'a justo aqu'i
 
 //otra forma de hacerlo ya que la de arriba no me funciona ostias
