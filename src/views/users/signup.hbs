@@ -1,0 +1,36 @@
+{{#each errors}} {{!-- si existe un error, lo vas a recorrer y hacer lo sigiente(generar el div siguiente) --}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{text}} {{!-- variable text que tenemos m'as abajo en el c'odigo y que conteiene los mensajes de error --}}
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">X</button>
+</div>
+{{/each}}
+
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Registro
+            </div>
+            <div class="card-body">
+                <!-- como destino le ponemos la ruta que hemos creado para recibir estos datos del formulario -->
+                <form action="/users/signup" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="name.." value="{{name}}"> <!-- la clase "form-group" solo es para separar los inputs de un formulario -->
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="@email.." value="{{email}}"> <!-- le decimos que su valor ser'a ese que se guarda en la variable que tiene el servidor, es decir, el valor que el propio usuairo ha introducido(esto solo ocurre en caso de que esta p'agina se vuelva a renderizar por alg'un error ) -->
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="password.." value="{{password}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="confirm_password" placeholder="confirm password.." value="{{confirm_password}}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-primary" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

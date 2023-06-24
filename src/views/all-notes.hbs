@@ -1,0 +1,29 @@
+{{!-- recorremos el arreglo de objetos de la bbdd(datos guardados del formulario) y los pintamos en tarjetas --}}
+<a href="/notes/add" class="btn btn-primary mb-4 font-xl px-4 ">+</a>
+
+
+<div class="row">
+    {{#each notes}} {{!-- ya que las notas son un arreglo, podemos recorrerlo con un each --}}
+        <div class="col-md-3"> <!-- generamos columnas de 3  -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title d-flex justify-content-between align-items-center">
+                        {{title}} <a href="/edit/{{_id}}"><i class="fas fa-edit"></i></a> {{!-- aqui accedemos al titulo del objeto  --}}
+                    </h4> <!-- ponemos el icono en un <a> para que tenga un href que al pulsar nos llevar'a a la ruta /edit creada en index.js y /_id de la tarea pulsada para saber concretamente qu'e tarea es -->
+                    <p>{{description}}</p>
+                    <form action="/delete/{{_id}}?_method=DELETE" method="post"> <!-- con el m'etodo override vamos a aniadir la funcionalidad de eliminar al bot'on, para eso lo ponemos dentro de un form -->
+                        <input type="hidden" name="_method" value="DELETE"> <!-- nuevamente creamos un input oculto con el nombre "_method" y el valor del tipo de la consulta "DELETE" -->
+                        <button class="btn btn-danger btn-block btn-sm" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{else}}         {{!-- en caso de que no haya tarjetas que recorrer(arreglo vacio) entonces crea una --}}
+    <div class="card mx-auto"> <!-- mx auto para que est'e centrada -->
+        <div class="card-body">
+            <p class="lead">No hay ninguna nota de momento.</p>
+            <a href="/notes/add" class="btn btn-success btn-block">!Crea una!</a>
+        </div>
+    </div> 
+    {{/each}}
+</div>

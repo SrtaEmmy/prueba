@@ -1,0 +1,6 @@
+{{#if success_msg}} {{!-- esto lo que dice es: si existe un mensaje de "Nota añadida correctamente" entonces pinta una alerta --}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{success_msg}} {{!-- en esa alerta mostramos el mensaje que tenemos predefinido en index.js "Nota añadida correctamente" --}}
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">X</button>
+</div>
+{{/if}}

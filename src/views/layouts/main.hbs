@@ -1,0 +1,62 @@
+{{!-- archivo para colocar la plantilla de la app(color de fondo, cabecera, nav etc) --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- css personalizado -->
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    {{!-- <p>Navigation</p> --}}
+<nav class="navbar navbar-expand-lg navbar-dark bd-light ">
+  <div class="container">
+    {{!-- <a class="navbar-brand" href="/">Navbar</a> --}}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/about">About Us</a>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Notes
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/notes">Your notes</a></li>
+            <li><a class="dropdown-item" href="/notes/add">Add note</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
+          </ul>
+        </li>
+
+        <a class="nav-link active" aria-current="page" href="/users/signin">Sign In</a>
+        <a class="nav-link" href="/users/signup">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+{{!-- {{> messages}} --}}  <!-- esto es para que me muestre los mensajes flash pero no funciona, parece haber alg'un prolema con la configuraci'on del directorio "views/partials" en index.js(servidor) -->
+<main class="container p-4">  <!-- esto es para centrar todo el contenido de la pagina -->
+    {{{ body }}}
+</main>
+
+	<p>Footer</p>
+
+<!-- scripts que hacen que funcione el bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+</body>
+</html>

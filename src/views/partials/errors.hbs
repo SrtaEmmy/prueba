@@ -1,0 +1,6 @@
+{{#each errors}} {{!-- si existe un error, lo vas a recorrer y hacer lo sigiente(generar el div siguiente) --}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{text}} {{!-- variable text que tenemos m'as abajo en el c'odigo y que conteiene los mensajes de error --}}
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">X</button>
+</div>
+{{/each}}
